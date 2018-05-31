@@ -1,23 +1,20 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+  <mainMenu></mainMenu>
 </template>
 
 <script>
+import mainMenu from './components/Menu';
 export default {
-  name: 'App',
+  components: {
+    mainMenu,
+  }
 };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import './assets/css/normalize.css';
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
 </style>
