@@ -13,6 +13,7 @@
         </li>
       </ul>
     </nav>
+    <slot></slot>
   </header>
 </template>
 

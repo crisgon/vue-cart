@@ -1,12 +1,19 @@
 <template>
-  <mainMenu></mainMenu>
+  <mainMenu>
+    <btn btnColor="btn btn-small btn-info"
+         :cartIcon="true">
+         Cart
+    </btn>
+  </mainMenu>
 </template>
 
 <script>
 import mainMenu from './components/Menu';
+import btn from './components/Btn';
 export default {
   components: {
     mainMenu,
+    btn
   }
 };
 </script>
