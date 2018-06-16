@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  props: ['btnColor', 'cartIcon']
+  props: ['btnColor', 'cartIcon'],
 };
 </script>
 
@@ -48,6 +48,3 @@ export default {
   }
 
 </style>
-
-
-

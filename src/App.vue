@@ -10,11 +10,12 @@
 <script>
 import mainMenu from './components/Menu';
 import btn from './components/Btn';
+
 export default {
   components: {
     mainMenu,
-    btn
-  }
+    btn,
+  },
 };
 </script>
 
