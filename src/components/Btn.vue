@@ -31,7 +31,7 @@ export default {
   }
 
   .btn-large {
-    padding: .7em 6em;
+    padding: .7em 5em;
   }
 
   .btn-info {
