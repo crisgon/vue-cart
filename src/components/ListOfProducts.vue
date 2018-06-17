@@ -8,7 +8,9 @@
         <span>10 x {{ Math.round(product.price / 10) }}, 00 </span>
       </div>
 
-      <btn btnColor="btn btn-large btn-sucess" :cartIcon="true">
+      <btn btnColor="btn btn-large btn-sucess"
+          :cartIcon="true"
+          @click.native="addProductToCart(product)">
         Add to cart
       </btn>
     </li>
@@ -25,11 +27,14 @@ export default {
   components: {
     btn,
   },
-
-  computed: {
+  methods: {
     ...mapActions([
       'addProduct',
     ]),
+
+    addProductToCart(product) {
+      this.addProduct(product);
+    },
   },
 };
 </script>
