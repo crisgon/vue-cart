@@ -16,12 +16,20 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import btn from './Btn';
 
 export default {
   props: ['products'],
+
   components: {
     btn,
+  },
+
+  computed: {
+    ...mapActions([
+      'addProduct',
+    ]),
   },
 };
 </script>

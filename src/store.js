@@ -70,6 +70,8 @@ export default new Vuex.Store({
         image: 'https://images-submarino.b2w.io/produtos/01/00/item/133666/1/133666164G1.jpg',
       },
     ],
+
+    cartProducts: [],
   },
 
   getters: {
@@ -79,10 +81,14 @@ export default new Vuex.Store({
   },
 
   mutations: {
-
+    ADD_PRODUCT: (state, product) => {
+      state.cartProducts.push(product);
+    },
   },
 
   actions: {
-
+    addProduct: (context, product) => {
+      context.commit('ADD_PRODUCT', product);
+    },
   },
 });
