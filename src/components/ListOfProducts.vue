@@ -1,19 +1,27 @@
 <template>
-  <listOfProducts :products="getAllProducts"/>
+  <ul class="listOfProducts">
+    <li v-for="(product, index) in products" :key="index" class="product">
+      <img :src="product.image" alt="">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <div class="product-price">
+        <span>R$ {{ product.price }}, 00</span>
+        <span>10 x {{ Math.round(product.price / 10) }}, 00 </span>
+      </div>
+
+      <btn btnColor="btn btn-large btn-sucess" :cartIcon="true">
+        Add to cart
+      </btn>
+    </li>
+  </ul>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import listOfProducts from './ListOfProducts';
+import btn from './Btn';
 
 export default {
+  props: ['products'],
   components: {
-    listOfProducts,
-  },
-  computed: {
-    ...mapGetters([
-      'getAllProducts',
-    ]),
+    btn,
   },
 };
 </script>

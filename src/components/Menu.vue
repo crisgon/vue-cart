@@ -3,13 +3,13 @@
     <nav class="nav">
       <ul class="nav-links">
         <li class="link">
-          <a href="#">All Products</a>
+          <router-link to="/">AllProducts</router-link>
         </li>
         <li class="link">
-          <a href="#">Notebooks</a>
+          <router-link to="/smartphones">Smartphones</router-link>
         </li>
         <li class="link">
-          <a href="#">Smartphones</a>
+          <router-link to="/notebooks">Notebooks</router-link>
         </li>
       </ul>
     </nav>
@@ -19,7 +19,6 @@
 
 <script>
 export default {
-
 };
 </script>
 

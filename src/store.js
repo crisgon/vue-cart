@@ -31,6 +31,11 @@ export default new Vuex.Store({
         price: 2599,
         image: 'https://images-americanas.b2w.io/produtos/01/00/item/133252/7/133252789G1.jpg',
       },
+      {
+        name: 'Notebook Dell Alienware - i7 16GB',
+        price: 14000,
+        image: 'https://images-submarino.b2w.io/produtos/01/00/sku/34470/9/34470934G1.jpg',
+      },
     ],
 
     smartphones: [
@@ -58,6 +63,11 @@ export default new Vuex.Store({
         name: 'Smartphone Motorola Moto G6 Plus',
         price: 1699,
         image: 'https://images-americanas.b2w.io/produtos/01/00/item/133453/1/133453185G1.jpg',
+      },
+      {
+        name: 'Smartphone Motorola Moto Z3 Play',
+        price: 2999,
+        image: 'https://images-submarino.b2w.io/produtos/01/00/item/133666/1/133666164G1.jpg',
       },
     ],
   },

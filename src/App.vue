@@ -6,20 +6,20 @@
          Cart
       </btn>
     </mainMenu>
-    <allProducts/>
+    <transition name="leave">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import mainMenu from './components/Menu';
 import btn from './components/Btn';
-import allProducts from './components/AllProducts';
 
 export default {
   components: {
     mainMenu,
     btn,
-    allProducts,
   },
 };
 </script>
@@ -34,5 +34,13 @@ export default {
 
   .container {
     width: 100%;
+  }
+
+  .leave-enter-active, .leave-leave-active {
+    transition: all .7s;
+  }
+  .leave-enter, .leave-leave-to {
+    opacity: 0;
+    transform: translateX(-50%);
   }
 </style>
