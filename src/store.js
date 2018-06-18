@@ -78,6 +78,7 @@ export default new Vuex.Store({
     getNotebooks: state => state.notebooks,
     getSmartphones: state => state.smartphones,
     getAllProducts: state => state.notebooks.concat(state.smartphones),
+    getProductsInCart: state => state.cartProducts,
   },
 
   mutations: {
