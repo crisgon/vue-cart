@@ -2,9 +2,12 @@
   <ul class="listOfProducts">
     <li v-for="(product, index) in products" :key="index" class="product">
       <img :src="product.image" alt="">
-      <h2 class="product-name">
-        {{ product.name }}
-      </h2>
+      <router-link to="/product details">
+        <h2 class="product-name"
+            @click="addCurrentProduct(product)">
+          {{ product.name }}
+        </h2>
+      </router-link>
       <div class="product-price">
         <span>R$ {{ product.price }}, 00</span>
         <span>10 x {{ Math.round(product.price / 10) }}, 00 </span>
@@ -32,10 +35,14 @@ export default {
   methods: {
     ...mapActions([
       'addProduct',
+      'currentProduct',
     ]),
 
     addProductToCart(product) {
       this.addProduct(product);
+    },
+    addCurrentProduct(product) {
+      this.currentProduct(product);
     },
   },
 };
@@ -68,6 +75,11 @@ export default {
   .product-name {
     font-size: 1.2em;
     font-weight: normal;
+  }
+
+  .product-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   .product-price {

@@ -43,6 +43,10 @@ export default {
     background-color: #FAFAFA;
   }
 
+  a {
+    color: #000;
+  }
+
   .container {
     width: 100%;
   }

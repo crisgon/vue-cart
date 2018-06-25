@@ -10,6 +10,7 @@ export default new Vuex.Store({
         name: 'Notebook Lenovo Ideapad 320 Intel® Core i5-7200u 8GB',
         price: 2259,
         image: 'https://images-americanas.b2w.io/produtos/01/00/item/132381/3/132381386G1.png',
+        stars: 5,
       },
       {
         name: 'Notebook Dell Inspiron i15-3567-A30P Intel Core 7ª i5 4GB',
@@ -80,6 +81,7 @@ export default new Vuex.Store({
     getSmartphones: state => state.smartphones,
     getAllProducts: state => state.notebooks.concat(state.smartphones),
     getProductsInCart: state => state.cartProducts,
+    getCurrentProduct: state => state.currentProduct,
   },
 
   mutations: {
@@ -88,7 +90,7 @@ export default new Vuex.Store({
     },
     CURRENT_PRODUCT: (state, product) => {
       state.currentProduct = product;
-    }
+    },
   },
 
   actions: {
@@ -97,6 +99,6 @@ export default new Vuex.Store({
     },
     currentProduct: (context, product) => {
       context.commit('CURRENT_PRODUCT', product);
-    }
+    },
   },
 });
