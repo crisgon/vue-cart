@@ -2,7 +2,9 @@
   <ul class="listOfProducts">
     <li v-for="(product, index) in products" :key="index" class="product">
       <img :src="product.image" alt="">
-      <h2 class="product-name">{{ product.name }}</h2>
+      <h2 class="product-name">
+        {{ product.name }}
+      </h2>
       <div class="product-price">
         <span>R$ {{ product.price }}, 00</span>
         <span>10 x {{ Math.round(product.price / 10) }}, 00 </span>

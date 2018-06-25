@@ -8,7 +8,7 @@
       <span class="item-price">R$ {{ product.price }}, 00</span>
     </div>
     <div class="cart-info" v-if="hasProduct()">
-      <span>Total: R$ {{ totalPrice() }},00</span>
+      <span>Total: 1000</span>
       <btn btnColor="btn btn-small btn-info">View cart</btn>
     </div>
   </div>
@@ -25,11 +25,6 @@ export default {
   methods: {
     hasProduct() {
       return this.getProductsInCart.length > 0;
-    },
-
-    totalPrice() {
-      return this.getProductsInCart.reduce((current, next) =>
-        current + next.price, 0);
     },
   },
   computed: {

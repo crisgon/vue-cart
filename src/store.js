@@ -72,6 +72,7 @@ export default new Vuex.Store({
     ],
 
     cartProducts: [],
+    currentProduct: {},
   },
 
   getters: {
@@ -85,11 +86,17 @@ export default new Vuex.Store({
     ADD_PRODUCT: (state, product) => {
       state.cartProducts.push(product);
     },
+    CURRENT_PRODUCT: (state, product) => {
+      state.currentProduct = product;
+    }
   },
 
   actions: {
     addProduct: (context, product) => {
       context.commit('ADD_PRODUCT', product);
     },
+    currentProduct: (context, product) => {
+      context.commit('CURRENT_PRODUCT', product);
+    }
   },
 });
