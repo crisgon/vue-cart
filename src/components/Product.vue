@@ -2,14 +2,17 @@
   <div class="product-box">
     <div class="product-image">
       <img :src="currentProduct.image" alt="">
-      <stars :rate="rated(currentProduct.stars)"/>
+      <stars :rate="rated(currentProduct.stars)" :totalReviews="currentProduct.totalReviews"/>
     </div>
     <div class="product-info">
       <h2 class="product-title">{{ currentProduct.name }}</h2>
-      <span class="product-price">R$ {{ currentProduct.price }}</span>
+      <span class="product-price">R$ {{ currentProduct.price }}, 00</span>
       <btn btnColor="btn btn-large btn-sucess" :cartIcon="true"
       @click.native="addProductToCart(currentProduct)">
         Buy Now
+      </btn>
+      <btn btnColor="btn btn-large btn-info">
+        More Info
       </btn>
     </div>
   </div>
@@ -77,5 +80,10 @@ export default {
   .product-price {
     font-size: 2em;
     font-weight: bolder;
+  }
+
+  .product-box button {
+    width: 300px;
+    margin: .3em 0;
   }
 </style>
