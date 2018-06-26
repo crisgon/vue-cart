@@ -109,6 +109,7 @@ export default new Vuex.Store({
 
     cartProducts: [],
     currentProduct: {},
+    showModal: false,
   },
 
   getters: {
@@ -117,6 +118,7 @@ export default new Vuex.Store({
     getAllProducts: state => state.notebooks.concat(state.smartphones),
     getProductsInCart: state => state.cartProducts,
     getCurrentProduct: state => state.currentProduct,
+    getShowModal: state => state.showModal,
   },
 
   mutations: {
@@ -126,6 +128,9 @@ export default new Vuex.Store({
     CURRENT_PRODUCT: (state, product) => {
       state.currentProduct = product;
     },
+    SHOW_MODAL: (state) => {
+      state.showModal = !state.showModal;
+    },
   },
 
   actions: {
@@ -134,6 +139,9 @@ export default new Vuex.Store({
     },
     currentProduct: (context, product) => {
       context.commit('CURRENT_PRODUCT', product);
+    },
+    showOrHiddenModal: (context) => {
+      context.commit('SHOW_MODAL');
     },
   },
 });

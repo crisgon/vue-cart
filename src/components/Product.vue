@@ -11,10 +11,12 @@
       @click.native="addProductToCart(currentProduct)">
         Buy Now
       </btn>
-      <btn btnColor="btn btn-large btn-info">
+      <btn btnColor="btn btn-large btn-info"
+          @click.native="openModal()">
         More Info
       </btn>
     </div>
+    <modal>{{ currentProduct.details }}</modal>
   </div>
 </template>
 
@@ -22,11 +24,13 @@
 import { mapGetters, mapActions } from 'vuex';
 import btn from './Btn';
 import stars from './Stars';
+import modal from './Modal';
 
 export default {
   components: {
     btn,
     stars,
+    modal,
   },
 
   computed: {
@@ -38,12 +42,16 @@ export default {
   methods: {
     ...mapActions([
       'addProduct',
+      'showOrHiddenModal',
     ]),
     addProductToCart(product) {
       this.addProduct(product);
     },
     rated(rate) {
       return `${rate * 20}%`;
+    },
+    openModal() {
+      this.showOrHiddenModal();
     },
   },
 

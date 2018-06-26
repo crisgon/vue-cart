@@ -42,6 +42,10 @@ export default {
     background-color: #27AE60;
   }
 
+  .btn-danger {
+    background-color: #e74c3c;
+  }
+
   .btn img {
     max-width: 20px;
     margin-left: .5em;
