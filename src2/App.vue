@@ -1,13 +1,10 @@
 <template>
   <div class="container">
     <mainMenu>
-      <btn btnColor="btn btn-small btn-info btn-popup"
+      <btn btnColor="btn btn-small btn-info"
          :cartIcon="true"
-         @click.native="openCart = !openCart" :items="5">
+         @click.native="openCart = !openCart">
          Cart
-        <span class="btn-circle" v-if="hasProduct()">
-           {{ getProductsInCart.length }}
-        </span>
       </btn>
       <transition name="appear">
         <popupcart class="cart" v-if="openCart"/>
@@ -16,16 +13,13 @@
     <transition name="leave">
       <router-view></router-view>
     </transition>
-    <maskBg v-if="openCart" @click.native="openCart = !openCart"/>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import mainMenu from './components/Menu';
-import btn from './components/Btn';
-import popupcart from './components/Popupcart';
-import maskBg from './components/Mask';
+import mainMenu from './componentes/Menu/Menu';
+import btn from './componentes/Btn/Btn';
+import popupcart from './componentes/Popupcart/Popupcart';
 
 export default {
   data() {
@@ -37,17 +31,6 @@ export default {
     mainMenu,
     btn,
     popupcart,
-    maskBg,
-  },
-  methods: {
-    hasProduct() {
-      return this.getProductsInCart.length > 0;
-    },
-  },
-  computed: {
-    ...mapGetters([
-      'getProductsInCart',
-    ]),
   },
 };
 </script>
@@ -60,10 +43,6 @@ export default {
     background-color: #FAFAFA;
   }
 
-  a {
-    color: #000;
-  }
-
   .container {
     width: 100%;
   }
@@ -72,20 +51,6 @@ export default {
     position: absolute;
     top: 75px;
     right: 300px;
-  }
-
-  .btn-circle {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #fff;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .leave-enter-active, .leave-leave-active {

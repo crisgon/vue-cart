@@ -8,7 +8,7 @@
       <span class="item-price">R$ {{ product.price }}, 00</span>
     </div>
     <div class="cart-info" v-if="hasProduct()">
-      <span>Total: R$ {{ totalPrice() }}, 00</span>
+      <span>Total: R$ {{ totalPrice() }},00</span>
       <btn btnColor="btn btn-small btn-info">View cart</btn>
     </div>
   </div>
@@ -16,7 +16,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import btn from './Btn';
+import btn from '@/componentes/Btn/Btn';
 
 export default {
   components: {
@@ -26,6 +26,7 @@ export default {
     hasProduct() {
       return this.getProductsInCart.length > 0;
     },
+
     totalPrice() {
       return this.getProductsInCart.reduce((current, next) =>
         current + next.price, 0);
@@ -48,8 +49,6 @@ export default {
     border-radius: 5px;
     box-sizing: border-box;
     padding: 1em .5em;
-    position: absolute;
-    z-index: 1;
   }
 
   .box:after {
@@ -74,6 +73,8 @@ export default {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    z-index: 1;
   }
 
   .item-thumb {
@@ -100,5 +101,4 @@ export default {
     justify-content: space-between;
     align-items: center;
   }
-
 </style>

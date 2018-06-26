@@ -20,7 +20,6 @@ export default {
     color: #fff;
     display: flex;
     justify-content: space-around;
-    position: relative;
   }
 
   .btn-small {
@@ -41,10 +40,6 @@ export default {
 
   .btn-sucess {
     background-color: #27AE60;
-  }
-
-  .btn-danger {
-    background-color: #e74c3c;
   }
 
   .btn img {
