@@ -64,18 +64,8 @@ export default {
 
   .modal button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .mask {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,.5);
+    bottom: -30px;
+    left: 350px;
   }
 
   .fade-enter-active, .fade-leave-active {
