@@ -49,7 +49,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'dist/static',
+    assetsSubDirectory: 'static',
     assetsPublicPath: 'https://crisgon.github.io/vue-cart/',
 
     /**
