@@ -7,7 +7,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .mask {
     position: fixed;
     top: 50%;

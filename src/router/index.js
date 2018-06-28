@@ -4,6 +4,7 @@ import AllProducts from '../components/AllProducts';
 import AllSmartphones from '../components/AllSmartphones';
 import AllNotebooks from '../components/AllNotebooks';
 import Product from '../components/Product';
+import CartCheckout from '../components/CartCheckout';
 
 Vue.use(Router);
 
@@ -25,9 +26,14 @@ export default new Router({
       component: AllNotebooks,
     },
     {
-      path: '/product details',
+      path: '/product-details',
       name: 'Product',
       component: Product,
+    },
+    {
+      path: '/checkout',
+      name: 'Checkout',
+      component: CartCheckout,
     },
   ],
 });

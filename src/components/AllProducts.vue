@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .listOfProducts {
     width: 100%;
     max-width: 1000px;

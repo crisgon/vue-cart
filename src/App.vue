@@ -3,36 +3,31 @@
     <mainMenu>
       <btn btnColor="btn btn-small btn-info btn-popup"
          :cartIcon="true"
-         @click.native="openCart = !openCart" :items="5">
+         @click.native="showPopupCart()">
          Cart
         <span class="btn-circle" v-if="hasProduct()">
            {{ getProductsInCart.length }}
         </span>
       </btn>
       <transition name="appear">
-        <popupcart class="cart" v-if="openCart"/>
+        <popupcart class="cart" v-if="getPopupCart"/>
       </transition>
     </mainMenu>
     <transition name="leave">
       <router-view></router-view>
     </transition>
-    <maskBg v-if="openCart" @click.native="openCart = !openCart"/>
+    <maskBg v-if="getPopupCart" @click.native="showPopupCart()"/>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import mainMenu from './components/Menu';
 import btn from './components/Btn';
 import popupcart from './components/Popupcart';
 import maskBg from './components/Mask';
 
 export default {
-  data() {
-    return {
-      openCart: false,
-    };
-  },
   components: {
     mainMenu,
     btn,
@@ -40,13 +35,20 @@ export default {
     maskBg,
   },
   methods: {
+    ...mapActions([
+      'showOrHiddenPopupCart',
+    ]),
     hasProduct() {
       return this.getProductsInCart.length > 0;
+    },
+    showPopupCart() {
+      this.showOrHiddenPopupCart();
     },
   },
   computed: {
     ...mapGetters([
       'getProductsInCart',
+      'getPopupCart',
     ]),
   },
 };
@@ -62,6 +64,7 @@ export default {
 
   a {
     color: #000;
+    text-decoration: none;
   }
 
   .container {

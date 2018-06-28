@@ -2,7 +2,7 @@
   <ul class="listOfProducts">
     <li v-for="(product, index) in products" :key="index" class="product">
       <img :src="product.image" alt="">
-      <router-link to="/product details">
+      <router-link to="/product-details">
         <h2 class="product-name"
             @click="addCurrentProduct(product)">
           {{ product.name }}
@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .listOfProducts {
     width: 100%;
     max-width: 1000px;

@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .modal {
     width: 100%;
     max-width: 500px;
@@ -64,8 +64,8 @@ export default {
 
   .modal button {
     position: absolute;
-    bottom: -30px;
-    left: 350px;
+    bottom: 10px;
+    right: 10px;
   }
 
   .fade-enter-active, .fade-leave-active {

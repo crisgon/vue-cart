@@ -9,13 +9,18 @@
     </div>
     <div class="cart-info" v-if="hasProduct()">
       <span>Total: R$ {{ totalPrice() }}, 00</span>
-      <btn btnColor="btn btn-small btn-info">View cart</btn>
+      <router-link to="/checkout">
+        <btn btnColor="btn btn-small btn-info"
+          @click.native="showPopupCart()">
+          View cart
+        </btn>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import btn from './Btn';
 
 export default {
@@ -23,12 +28,18 @@ export default {
     btn,
   },
   methods: {
+    ...mapActions([
+      'showOrHiddenPopupCart',
+    ]),
     hasProduct() {
       return this.getProductsInCart.length > 0;
     },
     totalPrice() {
       return this.getProductsInCart.reduce((current, next) =>
         current + next.price, 0);
+    },
+    showPopupCart() {
+      this.showOrHiddenPopupCart();
     },
   },
   computed: {
