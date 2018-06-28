@@ -92,7 +92,7 @@ export default {
   }
 
   .leave-enter-active, .leave-leave-active {
-    transition: all .7s;
+    transition: all 1.2s;
   }
   .leave-enter, .leave-leave-to {
     opacity: 0;
