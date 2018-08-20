@@ -1,8 +1,8 @@
 <template>
   <ul class="listOfProducts">
     <li v-for="(product, index) in products" :key="index" class="product">
+      <img :src="product.image" alt="">
       <router-link to="/product-details">
-        <img :src="product.image" :alt="product.name" @click="addCurrentProduct(product)">
         <h2 class="product-name"
             @click="addCurrentProduct(product)">
           {{ product.name }}
@@ -70,25 +70,16 @@ export default {
     flex-direction: column;
     align-items: center;
     border-radius: 7px;
-    transition: all .2s;
-  }
-
-  .product:hover,
-  .product:focus {
-    cursor: pointer;
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px #dfe4ea;
-  }
-
-  .product:hover .product-name,
-  .product:focus .product-name {
-    text-decoration: underline;
-    color: #2D9CDB;
   }
 
   .product-name {
     font-size: 1.2em;
     font-weight: normal;
+  }
+
+  .product-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   .product-price {

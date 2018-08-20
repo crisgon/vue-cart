@@ -7,11 +7,6 @@
     <div class="product-info">
       <h2 class="product-title">{{ currentProduct.name }}</h2>
       <span class="product-price">R$ {{ currentProduct.price }}, 00</span>
-      <span class="product-payment">
-        <img src="../assets/images/credit-card.svg" alt="Credit Card Icon">
-        10 x {{ Math.round(currentProduct.price / 10) }}, 00
-        in the card
-      </span>
       <btn btnColor="btn btn-large btn-sucess" :cartIcon="true"
       @click.native="addProductToCart(currentProduct)">
         Buy Now
@@ -75,7 +70,6 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
   }
 
   .product-image {
@@ -94,21 +88,6 @@ export default {
   .product-price {
     font-size: 2em;
     font-weight: bolder;
-  }
-
-  .product-payment {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-    padding: 1em 0;
-    font-size: 1.3em;
-    display: flex;
-    align-items: center;
-  }
-
-  .product-payment img {
-    width: 22px;
-    padding-right: .5em;
   }
 
   .product-box button {

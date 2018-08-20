@@ -39,18 +39,8 @@ export default {
     background-color: #2D9CDB;
   }
 
-  .btn-info:hover,
-  .btn-info:focus {
-    background-color: #58b0e2;
-  }
-
   .btn-sucess {
     background-color: #27AE60;
-  }
-
-  .btn-sucess:hover,
-  .btn-sucess:focus {
-    background-color: #3fc176;
   }
 
   .btn-danger {
