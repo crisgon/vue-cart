@@ -67,6 +67,7 @@ export default {
     text-decoration: none;
   }
 
+
   .container {
     width: 100%;
   }
@@ -75,6 +76,39 @@ export default {
     position: absolute;
     top: 75px;
     right: 300px;
+  }
+
+  @media screen and (max-width: 500px) {
+
+    .header{
+      width: 100%;
+      height: 130px;
+      padding: 0.5em;
+      display: flex;
+      margin-top: -20px;
+    }
+
+    .nav-links {
+      width: 100%;
+      display: flex;
+      position: absolute;
+      top: 20px;
+      right: -30px;
+    }
+
+    .cart {
+      position: absolute;
+      top: 125px;
+      right: 50px;
+    }
+
+    .btn-popup {
+      position: absolute;
+      top: 40px;
+      right: 170px;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .btn-circle {
