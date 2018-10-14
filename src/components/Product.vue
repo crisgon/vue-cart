@@ -15,6 +15,12 @@
           @click.native="openModal()">
         More Info
       </btn>
+      <btn btnColor="btn btn-small btn-normal" @click.native="addPostiveRating()">
+         Rate Product +
+      </btn>
+      <btn btnColor="btn btn-small btn-normal" @click.native="addNegativeRating()">
+         Rate Product -
+      </btn>
     </div>
     <modal>{{ currentProduct.details }}</modal>
   </div>
@@ -32,7 +38,12 @@ export default {
     stars,
     modal,
   },
-
+  // eslint-disable-next-line
+  data: function () {
+    return {
+      data: 1,
+    };
+  },
   computed: {
     ...mapGetters({
       currentProduct: 'getCurrentProduct',
@@ -43,6 +54,7 @@ export default {
     ...mapActions([
       'addProduct',
       'showOrHiddenModal',
+      'addStarRating',
     ]),
     addProductToCart(product) {
       this.addProduct(product);
@@ -53,8 +65,19 @@ export default {
     openModal() {
       this.showOrHiddenModal();
     },
+    addPostiveRating() {
+      this.data += 1;
+      this.currentProduct.stars += this.data;
+      this.addStarRating(this.currentProduct.stars);
+      this.data = 0;
+    },
+    addNegativeRating() {
+      this.data += 1;
+      this.currentProduct.stars -= this.data;
+      this.addStarRating(this.currentProduct.stars);
+      this.data = 0;
+    },
   },
-
 };
 </script>
 

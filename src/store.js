@@ -109,6 +109,7 @@ export default new Vuex.Store({
 
     cartProducts: [],
     currentProduct: {},
+    starRating: Number,
     showModal: false,
     showPopupCart: false,
   },
@@ -121,6 +122,7 @@ export default new Vuex.Store({
     getCurrentProduct: state => state.currentProduct,
     getShowModal: state => state.showModal,
     getPopupCart: state => state.showPopupCart,
+    getStarRating: state => state.currentProduct.stars,
   },
 
   mutations: {
@@ -139,6 +141,9 @@ export default new Vuex.Store({
     SHOW_POPUP_CART: (state) => {
       state.showPopupCart = !state.showPopupCart;
     },
+    ADD_STAR_RATING: (state, rating) => {
+      state.currentProduct.stars = rating;
+    },
   },
 
   actions: {
@@ -156,6 +161,12 @@ export default new Vuex.Store({
     },
     showOrHiddenPopupCart: (context) => {
       context.commit('SHOW_POPUP_CART');
+    },
+    addStarRating: (context, rating) => {
+      context.commit('ADD_STAR_RATING', rating);
+    },
+    removeStarRating: (context, index) => {
+      context.commit('REMOVE_STAR_RATING', index);
     },
   },
 });
