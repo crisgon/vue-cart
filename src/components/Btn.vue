@@ -35,6 +35,9 @@ export default {
     padding: .7em 5em;
   }
 
+  .btn-normal {
+    background-color: #FFCC00;
+  }
   .btn-info {
     background-color: #2D9CDB;
   }
