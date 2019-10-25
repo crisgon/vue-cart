@@ -53,4 +53,9 @@ export default {
     color: #fff;
     text-decoration: none;
   }
+
+  .link:hover {
+    background-color : #292424;
+    border-radius: 28px;
+  }
 </style>
