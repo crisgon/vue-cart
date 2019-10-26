@@ -3,13 +3,19 @@
     <nav class="nav">
       <ul class="nav-links">
         <li class="link">
-          <router-link to="/">AllProducts</router-link>
+          <router-link to="/">
+            <div class="navigateTo">AllProducts</div>
+          </router-link>
         </li>
         <li class="link">
-          <router-link to="/smartphones">Smartphones</router-link>
+          <router-link to="/smartphones">
+            <div class="navigateTo">Smartphones</div>
+          </router-link>
         </li>
         <li class="link">
-          <router-link to="/notebooks">Notebooks</router-link>
+          <router-link to="/notebooks">
+            <div class="navigateTo">Notebooks</div>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -52,5 +58,20 @@ export default {
   .link a {
     color: #fff;
     text-decoration: none;
+  }
+
+  .navigateTo{
+    padding: 5px;  
+    border: 1px solid transparent;
+    border-radius: 3px;
+  }
+
+  .router-link-exact-active .navigateTo{
+    background-color: #818181;
+    border: 1px solid #827f7f;
+  }
+
+  .navigateTo:hover{
+    border: 1px solid #6d6d6d;
   }
 </style>
