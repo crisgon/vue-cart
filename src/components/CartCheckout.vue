@@ -15,7 +15,7 @@
       <router-link to="./">Back to list of products</router-link>
     </div>
     <h3 class="total" v-if="hasProduct()">
-      Total: R$ {{ totalPrice() }}, 00
+      Total ({{getNumberOfItems()}}): R$ {{ totalPrice() }}, 00
     </h3>
   </div>
 </template>
@@ -36,6 +36,9 @@ export default {
     ]),
     hasProduct() {
       return this.getProductsInCart.length > 0;
+    },
+    getNumberOfItems(){
+      return this.getProductsInCart.length + ' ' + (this.getProductsInCart.length > 1 ? 'items' : 'item'); 
     },
     totalPrice() {
       return this.getProductsInCart.reduce((current, next) =>
