@@ -1,7 +1,7 @@
 # vue-cart
 
-> A Vue.js project
-> This project was made using vue, vuex and vue-router.
+> A Vue.js project.
+> This project was made using vue, vuex and vue-router.And used Javascript programming language.
 
 ### https://crisgon.github.io/vue-cart/dist/
 
