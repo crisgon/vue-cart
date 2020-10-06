@@ -17,7 +17,7 @@ export default new Vuex.Store({
       {
         name: 'Notebook Dell Inspiron i15-3567-A30P Intel Core 7ª i5 4GB',
         price: 2284,
-        image: 'https://images-americanas.b2w.io/produtos/01/00/item/133280/7/133280747G1.jpg',
+        image: 'https://i.pinimg.com/originals/5f/89/ae/5f89aef681eab294cf74b938c540a858.png',
         stars: 3.4,
         totalReviews: 20,
         details: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
