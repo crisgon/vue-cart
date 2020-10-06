@@ -1,7 +1,7 @@
 <template>
   <ul class="listOfProducts">
     <li v-for="(product, index) in products" :key="index" class="product">
-      <img :src="product.image" alt="">
+      <img width="300px" :src="product.image" alt="">
       <router-link to="/product-details">
         <h2 class="product-name"
             @click="addCurrentProduct(product)">
