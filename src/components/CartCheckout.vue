@@ -3,7 +3,7 @@
     <ul class="checkout-list">
       <transition-group name="fade">
       <li v-for="product in getProductsInCart" :key="product.id" class="checkout-product">
-        <img :src="product.image" alt="" class="product-image">
+        <img :src="product.image" :alt="product.name" class="product-image">
         <h3 class="product-name">{{ product.name }}</h3>
         <span class="product-price">R$ {{ product.price }},00 </span>
         <button class="product-remove" @click="remove(index)">&Cross;</button>
