@@ -2,11 +2,11 @@
   <div class="checkout-box">
     <ul class="checkout-list">
       <transition-group name="fade">
-      <li v-for="(product, index) in getProductsInCart" :key="index" class="checkout-product">
-        <img :src="product.image" alt="" class="product-image">
+      <li v-for="product in getProductsInCart" :key="product.id" class="checkout-product">
+        <img :src="product.image" :alt="product.name" class="product-image">
         <h3 class="product-name">{{ product.name }}</h3>
         <span class="product-price">R$ {{ product.price }},00 </span>
-        <button class="product-remove" @click="remove(index)">X</button>
+        <button class="product-remove" @click="remove(index)">&Cross;</button>
       </li>
       </transition-group>
     </ul>
@@ -93,13 +93,19 @@ export default {
   }
 
   .product-remove {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 1.2rem;
     border-radius: 50%;
     border: 0;
-    background-color: #E0E0E0;
+    background-color: #a3a3a3;
     color: #fff;
     cursor: pointer;
+    outline: none;
+  }
+  .product-remove:hover {
+    background-color: #D51325;
   }
 
   .total {
