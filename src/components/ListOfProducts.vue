@@ -1,6 +1,6 @@
 <template>
   <ul class="listOfProducts">
-    <li v-for="(product, index) in products" :key="index" class="product">
+    <li v-for="product in products" :key="product.id" class="product">
       <img width="300px" :src="product.image" alt="">
       <router-link to="/product-details">
         <h2 class="product-name"

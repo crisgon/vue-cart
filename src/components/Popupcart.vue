@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <span v-if="!hasProduct()">No products :/</span>
-    <div v-for="(product, index) in getProductsInCart"  :key="index" class="box-item">
+    <div v-for="product in getProductsInCart"  :key="product.id" class="box-item">
       <img :src="product.image" alt="" class="item-thumb">
       <h3 class="item-name">{{ product.name }}</h3>
       <span class="item-amount">Amount: 1</span>
