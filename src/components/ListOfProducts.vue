@@ -1,8 +1,8 @@
 <template>
   <ul class="listOfProducts">
     <li v-for="(product, index) in products" :key="index" class="product">
-      <div class="product-img">
-        <img :src="product.image" alt="">
+      <div class="product-image">
+        <img :src="product.image" alt="error loading">
       </div>
       <router-link to="/product-details">
         <h2 class="product-name"
@@ -92,12 +92,14 @@ export default {
     margin-bottom: .5em;
   }
 
-  .product-img {
+  .product-image {
     width: 250px;
     height: 250px;
   }
-  .product-img > img {
+
+  .product-image > img {
     height: 100%;
+    width: 100%;
   }
 
 </style>
