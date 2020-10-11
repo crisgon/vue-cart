@@ -1,7 +1,9 @@
 <template>
   <ul class="listOfProducts">
     <li v-for="(product, index) in products" :key="index" class="product">
-      <img :src="product.image" alt="">
+      <div class="product-image">
+        <img :src="product.image" alt="error loading">
+      </div>
       <router-link to="/product-details">
         <h2 class="product-name"
             @click="addCurrentProduct(product)">
@@ -88,6 +90,16 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-bottom: .5em;
+  }
+
+  .product-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .product-image > img {
+    height: 100%;
+    width: 100%;
   }
 
 </style>
