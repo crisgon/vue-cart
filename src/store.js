@@ -139,6 +139,18 @@ export default new Vuex.Store({
     SHOW_POPUP_CART: (state) => {
       state.showPopupCart = !state.showPopupCart;
     },
+    CHANGE_RATE: (state, rate) => {
+      /* eslint-disable */
+      state.notebooks.forEach(item => {
+        if (item.name === state.currentProduct.name) item.stars = rate;
+      });
+
+      state.smartphones.forEach(item => {
+        if (item.name === state.currentProduct.name) item.stars = rate;
+      });
+
+      state.currentProduct.stars = rate;
+    },
   },
 
   actions: {
@@ -156,6 +168,9 @@ export default new Vuex.Store({
     },
     showOrHiddenPopupCart: (context) => {
       context.commit('SHOW_POPUP_CART');
+    },
+    changeRate: (context, rate) => {
+      context.commit('CHANGE_RATE', rate);
     },
   },
 });
